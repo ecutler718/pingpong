@@ -13,6 +13,10 @@ namespace PingPongList
     {
       _userInput = userInput;
       //put logic here
+      for(int i = 1; i<=userInput; i++)
+      {
+        _items.Add(i.ToString());
+      }
 
     }
 
