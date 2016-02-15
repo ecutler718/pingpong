@@ -15,9 +15,23 @@ namespace PingPongList
       //put logic here
       for(int i = 1; i<=userInput; i++)
       {
-        _items.Add(i.ToString());
+        if (i % 15 == 0)
+        {
+          _items.Add("ping-pong");
+        }
+        else if(i % 3 == 0)
+        {
+          _items.Add("ping");
+        }
+        else if (i % 5 == 0)
+        {
+          _items.Add("pong");
+        }
+        else
+        {
+         _items.Add(i.ToString());
+        }
       }
-
     }
 
     public static List<string> GetAll()
