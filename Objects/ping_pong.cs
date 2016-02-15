@@ -6,7 +6,7 @@ namespace PingPongList
   public class PingPongGenerator
   {
     private int _userInput;
-    private int _id;
+    // private int _id;
     private static List<string> _items = new List<string> {};
 
     public PingPongGenerator (int userInput)
@@ -32,6 +32,15 @@ namespace PingPongList
          _items.Add(i.ToString());
         }
       }
+    }
+
+    public int GetUserInput()
+    {
+      return _userInput;
+    }
+    public void SetUserInput(int userInput)
+    {
+      _userInput = userInput;
     }
 
     public static List<string> GetAll()

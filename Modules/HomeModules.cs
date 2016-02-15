@@ -1,5 +1,6 @@
 using Nancy;
 using System.Collections.Generic;
+using PingPongList;
 
 namespace PingPong
 {
@@ -11,10 +12,10 @@ namespace PingPong
         return View["index.cshtml"];
       };
       Post["/result"]= _ => {
-        PingPongGenerator.ClearAll()
+        PingPongGenerator.ClearAll();
         PingPongGenerator game = new PingPongGenerator(int.Parse(Request.Form["userInput"]));
-        List<string> userList = game.GetAll();
-        return View ["game_result.chstml", userList];
+        List<string> userList = PingPongGenerator.GetAll();
+        return View ["game_result.cshtml", userList];
       };
     }
   }
