@@ -13,7 +13,8 @@ namespace PingPong
       Post["/result"]= _ => {
         PingPongGenerator.ClearAll()
         PingPongGenerator game = new PingPongGenerator(int.Parse(Request.Form["userInput"]));
-
+        List<string> userList = game.GetAll();
+        return View ["game_result.chstml", userList];
       };
     }
   }
